@@ -9,11 +9,12 @@ function LunchCheckController ($scope) {
 
   $scope.checkLunch = function () {
     var str = $scope.lunch_str;
-    if(str == '') {
+    if(!str) {
       $scope.msg = 'Please enter data first.'
     }
     else {
       var words = str.split(',');
+      console.log(words.length);
       for(var i=0; i<words.length; i++) {
         if(i < 3) {
           $scope.msg = 'Enjoy!';
@@ -23,7 +24,6 @@ function LunchCheckController ($scope) {
         }
       }
     }
-
   }
 }
 
